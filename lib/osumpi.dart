@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class OsumPie extends ChangeNotifier with _AppThemeManager {
-  OsumPie.create();
+class OsumPi extends ChangeNotifier with _AppThemeManager {
+  OsumPi.create();
 
   String get title => 'OsumPie - IoT ecosystem management interface';
 
-  factory OsumPie.of(BuildContext context) =>
-      Provider.of<OsumPie>(context, listen: false);
+  factory OsumPi.of(BuildContext context) =>
+      Provider.of<OsumPi>(context, listen: false);
 }
 
 mixin _AppThemeManager on ChangeNotifier {

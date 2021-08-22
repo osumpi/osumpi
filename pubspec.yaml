@@ -1,4 +1,4 @@
-name: osumpie
+name: osumpi
 description: Analyze and manage your bakecode ecosystem with osumpi.
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -10,9 +10,8 @@ environment:
 
 dependencies:
 
-  core:
-    git:
-      url: https://github.com/osumpi/bsi-dart
+  bsi_dart:
+    git: https://github.com/osumpi/bsi-dart.git
 
   flutter:
     sdk: flutter
