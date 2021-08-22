@@ -4,7 +4,6 @@
   ⚙ Automate things! Why? Because that's how we do things :)
 </p>
 
-## About
 OsumPi is designed to help automate things! OsumPi uses bakecode engine, A Service Oriented Architecture (SOA) based IoT Ecosystem Management Framework. Create, deploy and run services or recipes (jobs) in the ecosystem. Schedule recipes to run based on conditions to better optimize workflow. View and manage the ecosystem using Osum Pi (made using flutter framework) that interacts with the bakecode engine. This framework extensively uses MQTT messaging protocol to interact with the entities in the ecosystem and is primarily built using the dart language.
 
 ## Installing
