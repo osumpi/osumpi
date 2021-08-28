@@ -1,51 +1,81 @@
+import 'package:community_material_icon/community_material_icon.dart';
 import 'package:flutter/material.dart';
+import 'package:osumpi/shared/sidebar/sidebar.dart';
 
-class DashboardPage extends StatelessWidget {
-  const DashboardPage({Key? key}) : super(key: key);
+class Dashboard extends StatefulWidget {
+  const Dashboard({Key? key}) : super(key: key);
+
+  @override
+  _DashboardState createState() => _DashboardState();
+
+  static _DashboardState? of(BuildContext context) =>
+      context.findAncestorStateOfType<_DashboardState>();
+}
+
+class _DashboardState extends State<Dashboard> {
+  // final _pageController = PageController();
+
+  final destinations = const [
+    DashboardDestination(
+      icon: Icon(CommunityMaterialIcons.connection),
+      tooltip: 'tooltip',
+      child: Center(child: Text('child')),
+    ),
+    DashboardDestination(
+      icon: Icon(CommunityMaterialIcons.code_tags),
+      tooltip: 'tooltip',
+      child: Center(child: Text('child')),
+    ),
+    DashboardDestination(
+      icon: Icon(CommunityMaterialIcons.gauge),
+      tooltip: 'tooltip',
+      child: Center(child: Text('child')),
+    ),
+    DashboardDestination(
+      icon: Icon(CommunityMaterialIcons.server),
+      tooltip: 'tooltip',
+      child: Center(child: Text('child')),
+    ),
+    DashboardDestination(
+      icon: Icon(CommunityMaterialIcons.cogs),
+      tooltip: 'Settings',
+      child: Center(child: Text('child')),
+    ),
+  ];
+
+  int _selectedIndex = 0;
+
+  int get selectedIndex => _selectedIndex;
+
+  set selectedIndex(int value) {
+    if (selectedIndex != value) {
+      assert(selectedIndex < destinations.length);
+      setState(() => _selectedIndex = value);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(53),
-        child: Material(
-          color: Theme.of(context).backgroundColor,
-          child: Stack(
-            children: [
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text('logo'),
-                    Text('menus'),
-                  ],
-                ),
-              ),
-              Center(
-                child: Text('search bar'),
-              ),
-              Align(
-                alignment: Alignment.centerRight,
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text('ecosystem name'),
-                    SizedBox(width: 8),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.settings,
-                      ),
-                    ),
-                    SizedBox(width: 8),
-                  ],
-                ),
-              ),
-            ],
-          ),
+      body: SafeArea(
+        child: Row(
+          children: [
+            Sidebar(),
+          ],
         ),
       ),
     );
   }
+}
+
+class DashboardDestination {
+  const DashboardDestination({
+    required this.icon,
+    required this.tooltip,
+    required this.child,
+  });
+
+  final Icon icon;
+  final String tooltip;
+  final Widget child;
 }

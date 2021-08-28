@@ -21,7 +21,7 @@ class OsumPiApp extends StatelessWidget {
           themeMode: op.themeMode,
           theme: op.theme,
           darkTheme: op.darkTheme,
-          home: const DashboardPage(),
+          home: const Dashboard(),
         );
       },
     );

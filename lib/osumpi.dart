@@ -6,14 +6,14 @@ import 'package:provider/provider.dart';
 class OsumPi extends ChangeNotifier with _AppThemeManager {
   OsumPi.create();
 
-  String get title => 'OsumPie - IoT ecosystem management interface';
+  String get title => 'OsumPi - IoT ecosystem management interface';
 
   factory OsumPi.of(BuildContext context) =>
       Provider.of<OsumPi>(context, listen: false);
 }
 
 mixin _AppThemeManager on ChangeNotifier {
-  ThemeMode _themeMode = ThemeMode.dark;
+  ThemeMode _themeMode = ThemeMode.light;
 
   ThemeMode get themeMode => _themeMode;
 
@@ -26,24 +26,49 @@ mixin _AppThemeManager on ChangeNotifier {
 
   ThemeData get theme => ThemeData(
         scaffoldBackgroundColor: Colors.white,
-        primaryColor: const Color(0xFFED8936),
+        primaryColor: const Color(0xFF00B173),
+        canvasColor: const Color(0xFFF9FAFD),
         textTheme: _defaultTextTheme.apply(
           bodyColor: Colors.black,
           displayColor: Colors.black,
         ),
+        tooltipTheme: TooltipThemeData(
+          margin: const EdgeInsets.all(8),
+          padding: const EdgeInsets.all(8),
+          // verticalOffset: 0,
+        ),
+        navigationRailTheme: NavigationRailThemeData(
+          selectedIconTheme: const IconThemeData(
+            color: Colors.black,
+          ),
+          unselectedIconTheme: IconThemeData(
+            color: Colors.grey,
+          ),
+        ),
+        visualDensity: VisualDensity.comfortable,
       );
 
   ThemeData get darkTheme => ThemeData(
-        scaffoldBackgroundColor: const Color(0xFF202B3C),
-        backgroundColor: const Color(0xFF1B202C),
-        primaryColor: const Color(0xFFED8936),
-        accentColor: Colors.grey.shade400,
+        brightness: Brightness.dark,
+        scaffoldBackgroundColor: const Color(0xFF292934),
+        backgroundColor: const Color(0xFF212228),
+        primaryColor: const Color(0xFF00B173),
+        accentColor: Colors.grey.shade600,
         iconTheme: IconThemeData(
           color: Colors.grey.shade600,
         ),
         textTheme: _defaultTextTheme.apply(
           bodyColor: Colors.grey.shade300,
           displayColor: Colors.grey.shade600,
+        ),
+        navigationRailTheme: NavigationRailThemeData(
+          backgroundColor: const Color(0xFF24242C),
+          selectedIconTheme: const IconThemeData(
+            color: Colors.white,
+          ),
+          unselectedIconTheme: IconThemeData(
+            color: Colors.grey.shade600,
+          ),
         ),
       );
 
