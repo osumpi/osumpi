@@ -18,4 +18,4 @@ OsumPi is designed to help automate things! OsumPi uses bakecode engine, A Servi
 
 ## License
 
-OsumPi is licensed under [GNU General Public License](https://github.com/osumpi/osumpi/blob/f0b45d21c736140a92ed617698d46e574379097e/LICENSE)
+OsumPi is licensed under [GNU General Public License](https://github.com/osumpi/osumpi/blob/main/LICENSE)
