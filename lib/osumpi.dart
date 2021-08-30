@@ -32,6 +32,7 @@ mixin _AppThemeManager on ChangeNotifier {
           bodyColor: Colors.black,
           displayColor: Colors.black,
         ),
+        shadowColor: Colors.blueGrey.shade50,
         tooltipTheme: TooltipThemeData(
           margin: const EdgeInsets.all(8),
           padding: const EdgeInsets.all(8),
