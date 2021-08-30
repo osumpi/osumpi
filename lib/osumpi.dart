@@ -13,7 +13,7 @@ class OsumPi extends ChangeNotifier with _AppThemeManager {
 }
 
 mixin _AppThemeManager on ChangeNotifier {
-  ThemeMode _themeMode = ThemeMode.light;
+  ThemeMode _themeMode = ThemeMode.dark;
 
   ThemeMode get themeMode => _themeMode;
 
@@ -25,6 +25,7 @@ mixin _AppThemeManager on ChangeNotifier {
   }
 
   ThemeData get theme => ThemeData(
+        brightness: Brightness.light,
         scaffoldBackgroundColor: Colors.white,
         primaryColor: const Color(0xFF00B173),
         canvasColor: const Color(0xFFF9FAFD),
@@ -33,16 +34,20 @@ mixin _AppThemeManager on ChangeNotifier {
           displayColor: Colors.black,
         ),
         tooltipTheme: TooltipThemeData(
-          margin: const EdgeInsets.all(8),
+          margin: const EdgeInsets.only(left: 50),
           padding: const EdgeInsets.all(8),
-          // verticalOffset: 0,
+          decoration: BoxDecoration(
+            color: Colors.black45,
+          ),
+          verticalOffset: -10,
         ),
         navigationRailTheme: NavigationRailThemeData(
+          backgroundColor: const Color(0xFF24242C),
           selectedIconTheme: const IconThemeData(
-            color: Colors.black,
+            color: Colors.white,
           ),
           unselectedIconTheme: IconThemeData(
-            color: Colors.grey,
+            color: Colors.grey.shade600,
           ),
         ),
         visualDensity: VisualDensity.comfortable,

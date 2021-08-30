@@ -23,6 +23,7 @@ class Sidebar extends StatelessWidget {
             itemCount: dashboard.destinations.length,
             itemBuilder: (context, index) {
               final destination = dashboard.destinations.elementAt(index);
+              final isSelected = index == dashboard.selectedIndex;
 
               return Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -38,7 +39,7 @@ class Sidebar extends StatelessWidget {
                       width: 50,
                       child: Theme(
                         data: Theme.of(context).copyWith(
-                          iconTheme: index == dashboard.selectedIndex
+                          iconTheme: isSelected
                               ? navigationRailTheme.selectedIconTheme
                               : navigationRailTheme.unselectedIconTheme,
                         ),

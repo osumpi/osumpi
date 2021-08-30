@@ -18,22 +18,22 @@ class _DashboardState extends State<Dashboard> {
   final destinations = const [
     DashboardDestination(
       icon: Icon(CommunityMaterialIcons.connection),
-      tooltip: 'tooltip',
+      tooltip: 'Services',
       child: Center(child: Text('child')),
     ),
     DashboardDestination(
       icon: Icon(CommunityMaterialIcons.code_tags),
-      tooltip: 'tooltip',
+      tooltip: 'Recipes',
       child: Center(child: Text('child')),
     ),
     DashboardDestination(
       icon: Icon(CommunityMaterialIcons.gauge),
-      tooltip: 'tooltip',
+      tooltip: 'Performance',
       child: Center(child: Text('child')),
     ),
     DashboardDestination(
       icon: Icon(CommunityMaterialIcons.server),
-      tooltip: 'tooltip',
+      tooltip: 'BakeCode Engine',
       child: Center(child: Text('child')),
     ),
     DashboardDestination(
