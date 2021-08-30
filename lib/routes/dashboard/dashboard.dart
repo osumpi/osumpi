@@ -1,5 +1,6 @@
 import 'package:community_material_icon/community_material_icon.dart';
 import 'package:flutter/material.dart';
+import 'package:osumpi/routes/dashboard/search_bar.dart';
 import 'package:osumpi/shared/sidebar/sidebar.dart';
 
 class Dashboard extends StatefulWidget {
@@ -61,6 +62,12 @@ class _DashboardState extends State<Dashboard> {
         child: Row(
           children: [
             Sidebar(),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(23, 8, 23, 8),
+                child: SearchBar(),
+              ),
+            ),
           ],
         ),
       ),
