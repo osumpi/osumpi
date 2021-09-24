@@ -18,6 +18,11 @@ class _DashboardState extends State<Dashboard> {
 
   final destinations = const [
     DashboardDestination(
+      icon: Icon(CommunityMaterialIcons.compass),
+      tooltip: 'Explore',
+      child: Center(child: Text('child')),
+    ),
+    DashboardDestination(
       icon: Icon(CommunityMaterialIcons.connection),
       tooltip: 'Services',
       child: Center(child: Text('child')),

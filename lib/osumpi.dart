@@ -67,6 +67,14 @@ mixin _AppThemeManager on ChangeNotifier {
           bodyColor: Colors.grey.shade300,
           displayColor: Colors.grey.shade600,
         ),
+        tooltipTheme: TooltipThemeData(
+          margin: const EdgeInsets.only(left: 50),
+          padding: const EdgeInsets.all(8),
+          // decoration: BoxDecoration(
+          //   // color: Colors.black45,
+          // ),
+          verticalOffset: -10,
+        ),
         navigationRailTheme: NavigationRailThemeData(
           backgroundColor: const Color(0xFF24242C),
           selectedIconTheme: const IconThemeData(
