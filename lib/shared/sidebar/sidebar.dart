@@ -27,24 +27,22 @@ class Sidebar extends StatelessWidget {
 
               return Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Tooltip(
-                  message: destination.tooltip,
-                  child: InkWell(
-                    customBorder: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    onTap: () => dashboard.selectedIndex = index,
-                    child: SizedBox(
-                      height: 50,
-                      width: 50,
-                      child: Theme(
-                        data: Theme.of(context).copyWith(
-                          iconTheme: isSelected
-                              ? navigationRailTheme.selectedIconTheme
-                              : navigationRailTheme.unselectedIconTheme,
-                        ),
-                        child: destination.icon,
+                // TODO: add tooltip without affecting functionality
+                child: InkWell(
+                  customBorder: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  onTap: () => dashboard.selectedIndex = index,
+                  child: SizedBox(
+                    height: 50,
+                    width: 50,
+                    child: Theme(
+                      data: Theme.of(context).copyWith(
+                        iconTheme: isSelected
+                            ? navigationRailTheme.selectedIconTheme
+                            : navigationRailTheme.unselectedIconTheme,
                       ),
+                      child: destination.icon,
                     ),
                   ),
                 ),
