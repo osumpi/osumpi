@@ -60,11 +60,12 @@ class _DashboardState extends State<Dashboard> {
     return Scaffold(
       body: SafeArea(
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Sidebar(),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(23, 8, 23, 8),
+                padding: const EdgeInsets.fromLTRB(200, 20, 200, 8),
                 child: SearchBar(),
               ),
             ),
