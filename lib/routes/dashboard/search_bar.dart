@@ -27,19 +27,21 @@ class _SearchBarState extends State<SearchBar> {
         child: Material(
           color: Colors.white,
           elevation: 4,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              children: const [
-                Icon(Icons.search_rounded),
-                SizedBox(width: 10),
-                Text(
-                  "Ask me anything",
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
+          child: Row(
+            children: const [
+              SizedBox(width: 10),
+              Icon(Icons.search_rounded),
+              SizedBox(width: 10),
+              Expanded(
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: 'Ask me anything',
+                    //contentPadding: const EdgeInsets,
+                  ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
