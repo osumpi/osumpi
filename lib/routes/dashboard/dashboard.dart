@@ -39,7 +39,7 @@ class _DashboardState extends State<Dashboard> {
     ),
     DashboardDestination(
       icon: Icon(CommunityMaterialIcons.server),
-      tooltip: 'BakeCode Engine',
+      tooltip: 'Bakecode',
       child: Center(child: Text('child')),
     ),
     DashboardDestination(
@@ -62,17 +62,24 @@ class _DashboardState extends State<Dashboard> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Scaffold(
       body: SafeArea(
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Sidebar(),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(200, 20, 200, 8),
-                child: SearchBar(),
-              ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(mainAxisSize: MainAxisSize.min, children: [
+                Text(
+                  destinations[_selectedIndex].tooltip,
+                  style: theme.textTheme.headline6,
+                ),
+                SizedBox(width: 20),
+                SizedBox(width: 400, child: SearchBar()),
+              ]),
             ),
           ],
         ),
