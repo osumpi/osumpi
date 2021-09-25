@@ -29,10 +29,16 @@ mixin _AppThemeManager on ChangeNotifier {
         scaffoldBackgroundColor: Colors.white,
         primaryColor: const Color(0xFF00B173),
         canvasColor: const Color(0xFFF9FAFD),
-        textTheme: _defaultTextTheme.apply(
-          bodyColor: Colors.black,
-          displayColor: Colors.black,
-        ),
+        textTheme: _defaultTextTheme
+            .apply(
+              bodyColor: Colors.black,
+              displayColor: Colors.black,
+            )
+            .copyWith(
+              headline6: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
         shadowColor: Colors.blueGrey.shade50,
         tooltipTheme: TooltipThemeData(
           margin: const EdgeInsets.only(left: 50),
