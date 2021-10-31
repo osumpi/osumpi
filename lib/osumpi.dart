@@ -72,10 +72,16 @@ mixin _AppThemeManager on ChangeNotifier {
       iconTheme: IconThemeData(
         color: Colors.grey.shade600,
       ),
-      textTheme: _defaultTextTheme.apply(
-        bodyColor: Colors.grey.shade300,
-        displayColor: Colors.grey.shade600,
-      ),
+      textTheme: _defaultTextTheme
+          .apply(
+            bodyColor: Colors.grey.shade300,
+            displayColor: Colors.grey.shade600,
+          )
+          .copyWith(
+            headline6: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
       tooltipTheme: TooltipThemeData(
         margin: const EdgeInsets.only(left: 50),
         padding: const EdgeInsets.all(8),

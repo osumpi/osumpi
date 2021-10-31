@@ -1,6 +1,7 @@
 import 'package:community_material_icon/community_material_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:osumpi/routes/dashboard/search_bar.dart';
+import 'package:osumpi/shared/block.dart';
 import 'package:osumpi/shared/sidebar/sidebar.dart';
 
 class Dashboard extends StatefulWidget {
@@ -66,21 +67,28 @@ class _DashboardState extends State<Dashboard> {
     return Scaffold(
       body: SafeArea(
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Sidebar(),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(mainAxisSize: MainAxisSize.min, children: [
-                Text(
-                  destinations[_selectedIndex].tooltip,
-                  style: theme.textTheme.headline6,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(mainAxisSize: MainAxisSize.min, children: [
+                    Text(
+                      destinations[_selectedIndex].tooltip,
+                      style: theme.textTheme.headline6,
+                    ),
+                    SizedBox(width: 20),
+                    SizedBox(width: 400, child: SearchBar()),
+                  ]),
                 ),
-                SizedBox(width: 20),
-                SizedBox(width: 400, child: SearchBar()),
-              ]),
-            ),
+                Text("Hi"),
+                RecipeBlock(heading: Text("Hi i am very long block ! hehe :)"),),
+              ],
+            )
           ],
         ),
       ),
