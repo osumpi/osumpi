@@ -1,4 +1,4 @@
-![osumpi](https://github.com/osumpi/osumpi/blob/47f79c5047de1fef1d2f12f7fe5527483b9c5133/.github/banner.png)
+![osumpi](https://github.com/osumpi/osumpi/blob/a5743195ff99a55d3018f85583469227bb75ef8d/.github/banner.png)
 
 <p align="center">
   ⚙ Automate things! Why? Because that's how we do things :)
