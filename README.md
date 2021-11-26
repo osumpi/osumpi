@@ -1,7 +1,10 @@
-![osumpi](https://github.com/osumpi/osumpi/blob/a5743195ff99a55d3018f85583469227bb75ef8d/.github/banner.png)
-
 <p align="center">
-  ⚙ Automate things! Why? Because that's how we do things :)
+<img width="400" src="https://github.com/osumpi/.github/blob/main/profile/banner.png?raw=true"/>
+</p>
+
+<p align="center" style="color: grey;">
+  ⚙ Automate things! Why? Because that's how we do things :)</br>
+  Connecting things | IoT Automation Framework
 </p>
 
 ## About
