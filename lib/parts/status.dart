@@ -12,7 +12,7 @@ class StatusBar extends StatelessWidget {
   Widget build(final BuildContext context) {
     return Container(
       color: Colors.red,
-      child: Text("Hi"),
+      child: const Text("Hi"),
     );
   }
 }

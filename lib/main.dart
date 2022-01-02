@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:osumlog/osumlog.dart';
 import 'package:osumpi/models/theme.dart';
-import 'package:osumpi/routes/theme/page.dart';
+import 'package:osumpi/routes/dashboard/dashboard.dart';
 import 'package:osumpi/shared/path.dart';
 
 const title = "osumpi";
@@ -25,28 +25,28 @@ class OsumPi extends ConsumerWidget {
     return MaterialApp(
       title: title,
       theme: themeProvider.theme,
-      home: const Dashboard(),
+      home: Dashboard(),
     );
   }
 }
 
-class Dashboard extends ConsumerWidget {
-  const Dashboard({final Key? key}) : super(key: key);
+// class Dashboard extends ConsumerWidget {
+//   const Dashboard({final Key? key}) : super(key: key);
 
-  @override
-  Widget build(final BuildContext context, final WidgetRef ref) {
-    final themeNotifier = ref.watch(ThemeDataNotifier.provider);
+//   @override
+//   Widget build(final BuildContext context, final WidgetRef ref) {
+//     final themeNotifier = ref.watch(ThemeDataNotifier.provider);
 
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(title),
-      ),
-      body: ThemeEditorPage(),
-      floatingActionButton: FloatingActionButton(
-        onPressed: themeNotifier.toggleDarkMode,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
-    );
-  }
-}
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text(title),
+//       ),
+//       body: ThemeEditorPage(),
+//       floatingActionButton: FloatingActionButton(
+//         onPressed: themeNotifier.toggleDarkMode,
+//         tooltip: 'Increment',
+//         child: const Icon(Icons.add),
+//       ),
+//     );
+//   }
+// }

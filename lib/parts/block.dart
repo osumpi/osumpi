@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 
 class ReceipeBlockPort extends StatelessWidget {
-  final GestureTapCallback? onTap;
-  final GestureLongPressStartCallback? onLongPressStart;
-
   const ReceipeBlockPort({
-    Key? key,
+    final Key? key,
     this.onTap,
     this.onLongPressStart,
   }) : super(key: key);
 
+  final GestureTapCallback? onTap;
+
+  final GestureLongPressStartCallback? onLongPressStart;
+
   static const size = 12.0;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     // TODO: add device specific size changes to make it more accessible in tablets
     // const size = 12.0;
     return GestureDetector(
@@ -32,31 +33,33 @@ class ReceipeBlockPort extends StatelessWidget {
 }
 
 class RecipeBlock extends StatelessWidget {
-  static const _kDefaultGradient = LinearGradient(colors: [
-    Color(0xff000046),
-    Color(0xff1CB5E0),
-  ]);
-
-  final Text heading;
-  final LinearGradient gradient;
-
   const RecipeBlock({
-    Key? key,
+    final Key? key,
     required this.heading,
     this.gradient = _kDefaultGradient,
   }) : super(key: key);
 
+  static const _kDefaultGradient = LinearGradient(
+    colors: [
+      Color(0xff000046),
+      Color(0xff1CB5E0),
+    ],
+  );
+
+  final Text heading;
+  final LinearGradient gradient;
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     final borderRadius = BorderRadius.circular(23);
     return Stack(
       alignment: Alignment.center,
       children: [
         Center(
           child: Padding(
-            padding: EdgeInsets.all(ReceipeBlockPort.size / 2),
+            padding: const EdgeInsets.all(ReceipeBlockPort.size / 2),
             child: Material(
-              elevation: 6.0,
+              elevation: 6,
               shadowColor: Colors.grey.shade50,
               shape: RoundedRectangleBorder(
                 borderRadius: borderRadius,
@@ -69,7 +72,8 @@ class RecipeBlock extends StatelessWidget {
                 child: ElevatedButton(
                   style: ButtonStyle(
                     padding: MaterialStateProperty.all(
-                        const EdgeInsets.fromLTRB(30, 10, 30, 10)),
+                      const EdgeInsets.fromLTRB(30, 10, 30, 10),
+                    ),
                     backgroundColor:
                         MaterialStateProperty.all(Colors.transparent),
                     shadowColor: MaterialStateProperty.all(Colors.transparent),

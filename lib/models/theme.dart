@@ -81,6 +81,7 @@ class ThemeDataNotifier extends ChangeNotifier {
   /// The theme data.
   ThemeData get theme => _theme;
 
+  /// Load theme data from [map].
   void fromMap(final Map<String, dynamic> map) {
     Log.trace("ThemeDataNotifier.fromMap $map");
     final value = ThemeDecoder.decodeThemeData(map, validate: false);
@@ -95,7 +96,7 @@ class ThemeDataNotifier extends ChangeNotifier {
   static final provider =
       ChangeNotifierProvider((final ref) => ThemeDataNotifier());
 
-  /// Monitor theme file and reload if changes.
+  /// Init & Monitor theme file and reload if changes.
   Future<void> initAndMonitor() async {
     // Call once before actually monitoring the file changes.
     await load();

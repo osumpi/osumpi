@@ -5,7 +5,6 @@ import 'package:osumpi/models/theme.dart';
 import 'package:osumpi/routes/theme/save_debouncer.dart';
 import 'package:osumpi/routes/theme/setting.dart';
 import 'package:osumpi/shared/hexcolor.dart';
-import 'package:osumpi/shared/smooth_scroll_web.dart';
 import 'package:recase/recase.dart';
 
 class SettingsView extends ConsumerWidget {

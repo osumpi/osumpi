@@ -30,7 +30,13 @@ doc/api/
 *.js.deps
 *.js.map
 
+# Flutter Platform folders
 android/
 ios/
 windows/
 web/
+
+lib/generated_plugin_registrant.dart
+
+# Osumpi
+editor/

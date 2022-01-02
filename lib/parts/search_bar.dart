@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SearchBar extends StatefulWidget {
-  const SearchBar({Key? key}) : super(key: key);
+  const SearchBar({final Key? key}) : super(key: key);
 
   @override
   _SearchBarState createState() => _SearchBarState();
@@ -11,14 +11,14 @@ class _SearchBarState extends State<SearchBar> {
   final String queryKeywords = '';
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     final theme = Theme.of(context);
     return DecoratedBox(
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
             color: theme.shadowColor,
-            blurRadius: 7.0,
+            blurRadius: 7,
           ),
         ],
       ),
@@ -37,7 +37,6 @@ class _SearchBarState extends State<SearchBar> {
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: 'Ask me anything',
-                    //contentPadding: const EdgeInsets,
                   ),
                 ),
               ),

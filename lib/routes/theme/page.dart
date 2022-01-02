@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:osumpi/models/theme.dart';
 import 'package:osumpi/routes/theme/themejson.dart';
-import 'package:osumpi/routes/theme/view.dart';
+import 'package:osumpi/parts/view.dart';
 import 'package:osumpi/shared/smooth_scroll_web.dart';
 
 class ThemeEditorPage extends ConsumerWidget {

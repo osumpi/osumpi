@@ -1,13 +1,11 @@
-library osumpie.sidebar;
-
 import 'package:flutter/material.dart';
 import 'package:osumpi/routes/dashboard/dashboard.dart';
 
 class Sidebar extends StatelessWidget {
-  const Sidebar({Key? key}) : super(key: key);
+  const Sidebar({final Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     final dashboard = Dashboard.of(context)!;
     final navigationRailTheme = Theme.of(context).navigationRailTheme;
 
@@ -21,12 +19,12 @@ class Sidebar extends StatelessWidget {
           child: ListView.separated(
             shrinkWrap: true,
             itemCount: dashboard.destinations.length,
-            itemBuilder: (context, index) {
+            itemBuilder: (final context, final index) {
               final destination = dashboard.destinations.elementAt(index);
               final isSelected = index == dashboard.selectedIndex;
 
               return Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8),
                 // TODO: add tooltip without affecting functionality
                 child: InkWell(
                   customBorder: RoundedRectangleBorder(
@@ -48,7 +46,7 @@ class Sidebar extends StatelessWidget {
                 ),
               );
             },
-            separatorBuilder: (_, __) => const SizedBox(height: 8),
+            separatorBuilder: (final _, final __) => const SizedBox(height: 8),
           ),
         ),
       ),
