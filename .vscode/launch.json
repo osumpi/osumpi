@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "name": "osumpi",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart",
+        }
+    ]
+}

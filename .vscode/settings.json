@@ -1,0 +1,23 @@
+{
+    "files.exclude": {
+        // General Excludes
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        // Generated Dart files
+        "**/*.freezed.dart": true,
+        "**/*.g.dart": true,
+        // Dart tools
+        "**/.dart_tool": true,
+        "**/.packages": true,
+        "**/pubspec.lock": true,
+        "**/build/": true,
+        // Flutter Plugin Files
+        "**/.flutter-plugins": true,
+        "**/.flutter-plugins-dependencies": true,
+        "**/.metadata": true,
+    },
+}

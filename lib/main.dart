@@ -1,29 +1,52 @@
 import 'package:flutter/material.dart';
-import 'package:osumpi/osumpi.dart';
-import 'package:osumpi/routes/dashboard/dashboard.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:osumlog/osumlog.dart';
+import 'package:osumpi/models/theme.dart';
+import 'package:osumpi/routes/theme/page.dart';
+import 'package:osumpi/shared/path.dart';
 
-void main() => runApp(OsumPiApp());
+const title = "osumpi";
 
-class OsumPiApp extends StatelessWidget {
+void main() => runApp(const ProviderScope(child: OsumPi()));
+
+class OsumPi extends ConsumerWidget {
+  const OsumPi({final Key? key}) : super(key: key);
+
   @override
-  Widget build(BuildContext context) {
-    return ChangeNotifierProvider.value(
-      // Injects the OsumPie Manager
-      value: OsumPi.create(),
+  Widget build(final BuildContext context, final WidgetRef ref) {
+    final themeProvider = ref.watch(ThemeDataNotifier.provider);
 
-      builder: (context, _) {
-        final op = OsumPi.of(context);
+    if (!ThemeDataNotifier.isMonitoring) {
+      Log.fatal("Monitoring ${EditorPaths.theme}");
+      themeProvider.initAndMonitor();
+      ThemeDataNotifier.isMonitoring = true;
+    }
 
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: op.title,
-          themeMode: op.themeMode,
-          theme: op.theme,
-          darkTheme: op.darkTheme,
-          home: const Dashboard(),
-        );
-      },
+    return MaterialApp(
+      title: title,
+      theme: themeProvider.theme,
+      home: const Dashboard(),
+    );
+  }
+}
+
+class Dashboard extends ConsumerWidget {
+  const Dashboard({final Key? key}) : super(key: key);
+
+  @override
+  Widget build(final BuildContext context, final WidgetRef ref) {
+    final themeNotifier = ref.watch(ThemeDataNotifier.provider);
+
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(title),
+      ),
+      body: ThemeEditorPage(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: themeNotifier.toggleDarkMode,
+        tooltip: 'Increment',
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }
